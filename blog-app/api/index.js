@@ -1,12 +1,11 @@
-import  express  from "express";
-import dotenv from "dotenv"
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const authRoute = require("./routes/auth");
 
-import mongoose from "mongoose";
-
-const app = express()
 dotenv.config();
-
-app.use(express.json())
+app.use(express.json());
 
 const connect = () => {
     mongoose
@@ -19,6 +18,7 @@ const connect = () => {
       });
   };
 
+app.use("/api/auth", authRoute)
 app.listen("5000", () => {
     connect();
     console.log("running backend");
