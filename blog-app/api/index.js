@@ -1,13 +1,25 @@
-const express = require("express");
-const app =  express();
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+import  express  from "express";
+import dotenv from "dotenv"
 
+import mongoose from "mongoose";
 
+const app = express()
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL);
+app.use(express.json())
+
+const connect = () => {
+    mongoose
+      .connect(process.env.MONGO_URL)
+      .then(() => {
+        console.log("Connected to MongoDB!");
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
 
 app.listen("5000", () => {
+    connect();
     console.log("running backend");
 })
