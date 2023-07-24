@@ -20,7 +20,7 @@ const connect = () => {
   };
 
 app.use("/api/auth", authRoute);
-app.use("/api/auth", userRoute);
+app.use("/api/users", userRoute);
 
 app.listen("3000", () => {
     connect();

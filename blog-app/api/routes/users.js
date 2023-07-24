@@ -3,7 +3,6 @@ const router = require("express").Router();
 const User = require("../models/user");
 const post = require("../models/post");
 const bcrypt = require('bcrypt');
-const user = require("../models/user");
 
 //UPDATE
 router.put("/:id", async (req,res)=>{
@@ -50,13 +49,13 @@ router.delete("/:id", async (req,res)=>{
         res.status(404).json("user not found.");}
 }
     else {
-        res.status(401).json("Can delete only your own account")
+        res.status(404).json("Can delete only your own account")
     }
 });
 
 //GET USER
 
-router.get("/id:", async (req, res) =>{
+router.get("/:id", async (req, res) =>{
     try {
         const user = await User.findById(req.params.id);
         const{password, ...others} = user._doc
