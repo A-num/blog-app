@@ -1,20 +1,27 @@
-import "./post.css"
-import React from "react"
-export default function Post() {
+import "./post.css";
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Post({ post }) {
   return (
     <div className="post">
-      <img className="postImg" src="https://spaceplace.nasa.gov/gallery-space/en/NGC2336-galaxy.en.jpg" alt="" />
+     {post.photo &&(
+        <img className="postImg" src="{post.photo}" alt="img"/>
+      )} 
+     {/* <img className="postImg" src="https://1.bp.blogspot.com/-kK7Fxm7U9o0/YN0bSIwSLvI/AAAAAAAACFk/aF4EI7XU_ashruTzTIpifBfNzb4thUivACLcBGAsYHQ/s1280/222.jpg" alt="img"/>  */}
       <div className="postInfo">
         <div className="postCats">
-            <span className="postcat">Space</span>
-            <span className="postcat">Physics</span>
+          {post.categories.map((c) =>
+            <span className="postcat">{c.name}</span>
+          )}
         </div>
-        <span className="postTitle">Aurora</span>
-        <hr/>
-        <span className="postdate">1 hour ago </span>
+        <Link to={`/post/${post._id}`}>
+          <span className="postTitle">{post.title}</span>
+        </Link>
+        <hr />
+        <span className="postdate">{new Date(post.createdAt).toDateString()}</span>
       </div>
-      <p className="postDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia distinctio, recusandae aut deleniti aperiam non perspiciatis dignissimos perferendis aliquam dolores. Esse beatae amet fugit consequuntur delectus repellendus natus sapiente illum.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia distinctio, recusandae aut deleniti aperiam non perspiciatis dignissimos perferendis aliquam dolores. Esse beatae amet fugit consequuntur delectus repellendus natus sapiente illum.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia distinctio, recusandae aut deleniti aperiam non perspiciatis dignissimos perferendis aliquam dolores. Esse beatae amet fugit consequuntur delectus repellendus natus sapiente illum.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia distinctio, recusandae aut deleniti aperiam non perspiciatis dignissimos perferendis aliquam dolores. Esse beatae amet fugit consequuntur delectus repellendus natus sapiente illum.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia distinctio, recusandae aut deleniti aperiam non perspiciatis dignissimos perferendis aliquam dolores. Esse beatae amet fugit consequuntur delectus repellendus natus sapiente illum.</p>
+      <p className="postDesc">{post.desc}</p>
     </div>
   )
 }
