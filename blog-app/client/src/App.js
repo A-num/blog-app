@@ -1,4 +1,4 @@
-import React, { children } from 'react'
+import React from 'react'
 import Single from "./Pages/single/Single"
 import Home from "./Pages/home/Home"
 import Write from "./Pages/write/Write"

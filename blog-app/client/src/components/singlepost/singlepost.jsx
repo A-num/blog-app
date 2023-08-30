@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom"
-import "./Singlepost.css"
-import React, { useEffect } from "react"
+import { Link, useLocation } from "react-router-dom";
+import "./Singlepost.css";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 
