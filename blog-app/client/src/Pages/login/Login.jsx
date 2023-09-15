@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Context } from "../../context/Context";
+import { Context } from "../../context/Context"
 import "./login.css";
 import React, { useContext, useRef } from "react"
 
@@ -36,3 +36,4 @@ console.log(user)
     </div>
   );
 }
+
