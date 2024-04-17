@@ -8,7 +8,7 @@ import {useEffect} from 'react';
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
-export default function home() {
+export default function Home() {
   const [posts, setPosts] = useState([]);
   const {search} = useLocation()
 

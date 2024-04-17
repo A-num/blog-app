@@ -24,9 +24,9 @@ const connect = () => {
 
   const storage = multer.diskStorage({
     destination:(req,file,cb) =>{
-      cb(null, "images")
+      cb(null, "images");
     }, filename:(req,file,cb) =>{
-      cb(null,"hello.jpg");
+      cb(null,req.body.name);
     },
   });
 
@@ -40,7 +40,8 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.listen("3000", () => {
+
+app.listen("5000", () => {
     connect();
     console.log("running backend");
 })
