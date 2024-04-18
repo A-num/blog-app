@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Single from "./Pages/single/Single"
 import Home from "./Pages/home/Home"
 import Write from "./Pages/write/Write"
@@ -12,6 +12,7 @@ import {
   RouterProvider,
   Outlet,   
 } from "react-router-dom";
+import { Context } from './context/Context'
 
 
 const Layout = () => {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-
+  const { user } = useContext(Context)
   return (
     <div>
     <RouterProvider router={router} />

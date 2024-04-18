@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 
-export default function singlepost() {
+export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({})
