@@ -22,13 +22,13 @@ export default function TopBar(){
                 <li className="toplistitem">
                 <Link to="/write">Write Blog</Link>                   
                 </li>         
-                {/* <li className="toplistitem">
+                <li className="toplistitem">
                 <Link to="/logout">Logout</Link>                    
-                </li> */}
+                </li>
             </ul>
            </div>
            <div className="topright">
-            {/* <img className="topImg" src="https://i.pinimg.com/474x/7b/d0/ce/7bd0ce74960ad099a34c2c1503b4bc6f.jpg" alt="img"/> */}
+            <img className="topImg" src="https://i.pinimg.com/474x/7b/d0/ce/7bd0ce74960ad099a34c2c1503b4bc6f.jpg" alt="img"/>
             <ul className="toplist">
             <li className="toplistitem">
                 <Link to="/login">Login</Link>                   
@@ -42,3 +42,4 @@ export default function TopBar(){
         </div>
     )
 }
+

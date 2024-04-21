@@ -29,7 +29,7 @@ dispatch({type:"LOGIN_SUCCESS", payload: res.data});
         <input className="loginInput" type="text" placeholder="Enter your username..." ref={userRef} />
         <label>Password</label>
         <input className="loginInput" type="password" placeholder="Enter your password..." ref={passwordRef} />
-        <button className="loginButton"type="submit">Login</button>
+        <button className="loginButton"type="submit" disabled={isFetching}>Login</button>
       </form>
         <button className="loginRegisterButton">Register</button>
     </div>

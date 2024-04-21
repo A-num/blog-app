@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function SinglePost() {
   const location = useLocation();
-  const path = location.pathname.split("/")[2];
+  const path = location.path.split("/")[2];
   const [post, setPost] = useState({})
 
   useEffect(() => {
